@@ -1,11 +1,11 @@
 import { useState, ChangeEvent } from 'react';
 import axios from 'axios';
 
-import './styles/form.css';
+import './styles/child.css';
 
 
 
-const FirstComponent = () => {
+const ChildForm = () => {
     const [selectedSex, setSelectedSex] = useState('');
     const [name, setName] = useState('');
     const [sex, setSex] = useState('');
@@ -53,18 +53,18 @@ const FirstComponent = () => {
             <div className='name-sex'>
                 <input className='name-input' type="text" placeholder="Введіть Ім'я" value={name} onChange={handleNameChange} />
                 <div>
-                    <button type="button" className={selectedSex === 'Ж' ? 'sex-active main-color' : 'sex-btn'} onClick={() => handleSexChange('Ж')}>Ж</button>
-                    <button type="button" className={selectedSex === 'М' ? 'sex-active main-color' : 'sex-btn'} onClick={() => handleSexChange('М')}>М</button>
+                    <button type="button" className={selectedSex === 'Ж' ? 'sex-active child-color' : 'sex-btn'} onClick={() => handleSexChange('Ж')}>Ж</button>
+                    <button type="button" className={selectedSex === 'М' ? 'sex-active child-color' : 'sex-btn'} onClick={() => handleSexChange('М')}>М</button>
                 </div>
             </div>
             <input className='birth-input' type="text" placeholder="Введіть дату народження" value={birthdate} onChange={handleBirthdateChange} />
-            <button className='submit-btn main-color'type="submit" onClick={handleCalculate}>Розрахувати</button>
+            <button className='submit-btn child-color'type="submit" onClick={handleCalculate}>Розрахувати</button>
                 <div className='select-variant'>
-                    <button className={matrixType === 'Стандарт' ? 'active default-btn main-color' : 'default-btn'} type="button" onClick={() => handleMatrixTypeChange('Стандарт')}>Стандарт</button>
-                    <button className={matrixType === 'Поглиблений' ? 'active deep-btn main-color' : 'deep-btn'} type="button" onClick={() => handleMatrixTypeChange('Поглиблений')}>Поглиблений</button>
+                    <button className={matrixType === 'Стандарт' ? 'active default-btn child-color' : 'default-btn'} type="button" onClick={() => handleMatrixTypeChange('Стандарт')}>Стандарт</button>
+                    <button className={matrixType === 'Поглиблений' ? 'active deep-btn child-color' : 'deep-btn'} type="button" onClick={() => handleMatrixTypeChange('Поглиблений')}>Поглиблений</button>
                 </div>
         </form>
     );
 };
 
-export default FirstComponent;
+export default ChildForm;

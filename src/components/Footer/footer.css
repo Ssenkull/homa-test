@@ -1,0 +1,38 @@
+.footer{
+    background-color: #fc6245;
+    padding-top: 70px;
+}
+
+.footer-wrapper{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.about-list{
+    text-align: left;
+}
+
+.about-list__item{
+    color: #f7f7f7;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.footer-btn{
+    background-color: #ff4400;
+    color: #f7f7f7;
+    padding: 10px 40px; 
+    border: none;
+    border-radius: 10px; 
+    cursor: pointer; 
+    font-size: 16px; 
+    text-align: center; 
+    transition: background-color 0.3s; 
+    width: 340px;
+    height: 60px;
+}
+
+.footer-btn:hover{
+    background-color: #e63d00; /* Трохи темніший колір для ефекту при наведенні */
+}

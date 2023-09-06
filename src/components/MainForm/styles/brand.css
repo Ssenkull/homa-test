@@ -1,0 +1,121 @@
+.main-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+input {
+    height: 30px;
+}
+
+.name-input{
+    width: 80% !important;
+}
+
+.name-sex,
+.select-variant {
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+}
+
+.name-input{
+    width: 78% !important;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.birth-input {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 98%;
+}
+
+/* стилі для контейнера кнопок */
+.name-sex div,
+.select-variant {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: #f0f0f0;
+}
+
+.name-sex div{
+    border-radius: 10px;
+}
+
+/* спільний стиль для кнопок */
+.name-sex button,
+.select-variant button {
+    flex: 1;
+    padding: 5px 10px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* стиль для активної кнопки */
+.sex-active,
+.active {
+    background-color: #080808;
+    color: #f7f7f7;
+    border: none !important;
+    border-radius: 0 !important;
+}
+
+.brand-color{
+    background-color: #080808 !important;
+}
+
+.main-form button[type="button"] {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.main-form button[type="button"]:hover {
+    background-color: #e9ecef;
+}
+
+.sex-btn{
+    border: none !important;
+    border-radius: 0 !important;
+}
+
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    background-color: #080808;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-btn {
+    width: 100%;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+}
+
+.default-btn, .deep-btn {
+    width: 100%;
+    border: none !important;
+}

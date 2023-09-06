@@ -27,9 +27,9 @@ const Header: React.FC<HeaderProps> = ({ links}) => {
                 </ul>
             </nav>
             <div className="header-btn">
-                <button>Розрахуавти матрицю</button>
+                <button>Розрахувати матрицю</button>
             </div>
-            <a href='personal-space' className="icon">
+            <a href='personal-space' className="person-icon">
                 <Person/>
             </a>
             </div>

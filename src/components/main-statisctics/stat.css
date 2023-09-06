@@ -1,0 +1,17 @@
+.stat-inner {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+.stat-text{
+    padding: 0;
+    margin-top: 1px !important;
+}
+
+.stat-num{
+    padding: 0;
+    margin-bottom: 5px !important;
+}

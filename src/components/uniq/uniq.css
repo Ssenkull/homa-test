@@ -1,0 +1,39 @@
+.uniq-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url('../../../public/uniq.png');
+    background-repeat: no-repeat;
+    background-size: 80%; /* Зменшуємо розмір картинки на 80% від її оригінального розміру */
+    background-position: calc(100% + 100px) calc(50% + 50px); 
+    padding-right: 35%; /* Цей відступ може потребувати корекції, залежно від вашого дизайну */
+    margin: 30px 0;
+    border-radius: 20px;
+}
+
+.uniq-title {
+    font-size: 34px;
+}
+
+.uniq-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start; /* Змінено на flex-start для вирівнювання тексту по лівому краю */
+    position: relative;
+    right: -20px; /* Зсув тексту вправо на -20px */
+    z-index: 1;
+    max-width: 550px;
+    font-size: 20px;
+    text-align: left;
+    
+}
+
+.uniq-text__item {
+    text-align: left;
+    font-weight: 500;
+}
+
+.uniq-text__item span {
+    color: #de4604;
+}

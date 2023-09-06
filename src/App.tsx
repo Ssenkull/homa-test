@@ -4,14 +4,30 @@ import MainForm from './components/MainForm/MainForm';
 import axios, { AxiosResponse } from 'axios';
 
 import './App.css';
+import Stat from './components/main-statisctics';
+import AboutMatrix from './components/AboutMatrix';
+import Uniq from './components/uniq';
+import Footer from './components/Footer/Footer';
+import MobileBlock from './components/Mobile/Mobile';
+import FreeBlock from './components/FreeCalcBlock/FreeBlock';
+import MainCard from './components/cards/MainCard';
+import ApiComponent from './components/apiTest/Api';
 
 // import logo from './img/logo.svg';
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <Header links={['Сумісність в парі', 'Дитяча', 'Тарифи', 'Відгуки', 'Блог']}/>
+      <Header links={['Матриці', 'Матеріали', 'Тарифи', 'Відгуки', 'Блог']}/>
+      <ApiComponent/>
       <MainForm />
+      <Stat/>
+      <AboutMatrix/>
+      <FreeBlock/>
+      <Uniq/>
+      <MainCard/>
+      <MobileBlock/>
+      <Footer/>
     </div>
   );
 }
