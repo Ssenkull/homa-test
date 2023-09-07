@@ -35,7 +35,7 @@ function ApiComponent() {
     }
 
     
-    const apiUrl = `http://localhost:8000/api.php?birthdate=${date}`;
+    const apiUrl = `http://localhost:8000/homa-test/api/api.php?birthdate=${date}`;
 
    
     fetch(apiUrl)
@@ -67,7 +67,9 @@ function ApiComponent() {
       {message && <p>{message}</p>}
       {age && <p>Age: {age}</p>} {/* Display the age */}
       {apiData && (
+  
         <div>
+          
           {/* <p>a: {apiData.a}</p>
           <p>b: {apiData.b}</p>
           <p>c: {apiData.c}</p>
