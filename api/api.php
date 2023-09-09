@@ -114,6 +114,13 @@ function calculateAge($birthdate)
         }
         return $sum;
     };
+    $roundIfGreaterThan9 = function ($sum) {
+        while ($sum >= 22) {
+            $digits = digitsIterative($sum);
+            $sum = $digits[0] + $digits[1];
+        }
+        return $sum;
+    };
 
     $c_1 = $roundIfGreaterThan22($a + $b);
     $c_2 = $roundIfGreaterThan22($b + $c);
@@ -151,6 +158,19 @@ function calculateAge($birthdate)
     $sum_2 = $roundIfGreaterThan22($men + $women);
     $sum_3 = $roundIfGreaterThan22($sum + $sum_2);
     
+    $planet = $roundIfGreaterThan22($sum+$sum_2+$sum_3);
+    $round9_1 = $roundIfGreaterThan9($sky+$earth+$sum);
+    $round9_2 = $roundIfGreaterThan9($men+$women+$sum_2+$sum_3);
+
+    $round9_a = $roundIfGreaterThan9($a+$a_2+$a_3);
+    $round9_c_1 = $roundIfGreaterThan9($c_1+$c_1_3+$c_1_2);
+    $round9_b = $roundIfGreaterThan9($b+$b_2+$b_3);
+    $round9_c_2 = $roundIfGreaterThan9($c_2+$c_2_3+$c_2_2);
+    $round9_year = $roundIfGreaterThan9($c+$year_2+$year_3);
+    $round9_c_3 = $roundIfGreaterThan9($c_3+$c_3_3+$c_3_2);
+    $round9_e = $roundIfGreaterThan9($e+$e_2+$e_3);
+    $round9_c_4 = $roundIfGreaterThan9($c_4+$c_4_3+$c_4_2); 
+
     $sum_ab = $roundIfGreaterThan22($a+$b);
     $sum_ab_2 = $roundIfGreaterThan22($a_2+$b_2);
     $sum_ab_3 = $roundIfGreaterThan22($a_3+$b_3);
@@ -216,6 +236,17 @@ function calculateAge($birthdate)
         'sum_f' => $sum_f,
         'sum_e' => $sum_e,
         'sum_emj' => $sum_emj,
+        'planet'=>$planet,
+        'round9_1' => $round9_1,
+        'round9_2' => $round9_2,
+        'round9_a'=> $round9_a,
+        'round9_c_1'=> $round9_c_1,
+        'round9_b' => $round9_b,
+        'round9_c_2' => $round9_c_2,
+        'round9_year' => $round9_year,
+        'round9_c_3' => $round9_c_3,
+        'round9_e' => $round9_e,
+        'round9_c_4' => $round9_c_4,
     ];
 }   
 try {
