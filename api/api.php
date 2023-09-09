@@ -151,6 +151,17 @@ function calculateAge($birthdate)
     $sum_2 = $roundIfGreaterThan22($men + $women);
     $sum_3 = $roundIfGreaterThan22($sum + $sum_2);
     
+    $sum_ab = $roundIfGreaterThan22($a+$b);
+    $sum_ab_2 = $roundIfGreaterThan22($a_2+$b_2);
+    $sum_ab_3 = $roundIfGreaterThan22($a_3+$b_3);
+    $sum_r_r = $roundIfGreaterThan22($r_1+$r_2);
+    $sum_center = $roundIfGreaterThan22($center+$center);
+    $sum_e_year = $roundIfGreaterThan22($e_3+$year_3);
+    $sum_e_c = $roundIfGreaterThan22($e+$c);
+    $sum_f = $roundIfGreaterThan22($a+$a_2+$a_3+$r_1+$center+$year_3+$c);
+    $sum_e = $roundIfGreaterThan22($b+$b_2+$b_3+$r_2+$center+$e_3+$e);
+    $sum_emj = $roundIfGreaterThan22($sum_ab+$sum_ab_2+$sum_ab_3+$sum_r_r+$sum_center+$sum_e_year+$sum_e_c);
+
     return [
         'birthdate'=>$birthdate,
         'age' => $age,
@@ -195,6 +206,16 @@ function calculateAge($birthdate)
         'sum_2' => $sum_2,
         'sum_3' => $sum_3,
         'month' => $birthdateDate->format('n'),
+        'sum_ab' => $sum_ab,
+        'sum_ab_2' => $sum_ab_2,
+        'sum_ab_3' => $sum_ab_3,
+        'sum_r_r' => $sum_r_r,
+        'sum_center' => $sum_center,
+        'sum_e_year' => $sum_e_year,
+        'sum_e_c' => $sum_e_c,
+        'sum_f' => $sum_f,
+        'sum_e' => $sum_e,
+        'sum_emj' => $sum_emj,
     ];
 }   
 try {
