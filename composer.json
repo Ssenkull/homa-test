@@ -1,0 +1,18 @@
+{
+    "name": "illja/homa-test",
+    "autoload": {
+        "psr-4": {
+            "Illja\\HomaTest\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Illja1",
+            "email": "illjahomenko@gmail.com"
+        }
+    ],
+    "require": {
+        "mongodb/mongodb": "^1.16",
+        "jenssegers/mongodb": "^3.9"
+    }
+}

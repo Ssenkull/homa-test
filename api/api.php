@@ -1,28 +1,35 @@
 <?php
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Headers: *');
+header('Content-Type: application/json');
+
+
+$dbhost = 'snuffleupagus.db.elephantsql.com';   
+$dbname = 'tzxggase';      
+$dbuser = 'tzxggase';  
+$dbpass = 'a_av9o_b0fCmXS9k90PsYWAuRmYGMqNm';
+
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    // Handle GET requests
     
-    // Check if the 'birthdate' parameter is set and matches the 'DD/MM/YYYY' format
     if (isset($_GET['birthdate']) && preg_match('/^\d{2}\/\d{2}\/\d{4}$/', $_GET['birthdate'])) {
         $inputDate = $_GET['birthdate'];
         
-        // Parse the input date in 'DD/MM/YYYY' format
+        
         $birthdateDate = date_create_from_format('d/m/Y', $inputDate);
         
         if ($birthdateDate !== false) {
-            // Convert the date to 'YYYY-MM-DD' format
+        
             $birthdate = $birthdateDate->format('Y-m-d');
             
-            // Calculate age based on the provided birthdate
+            
             $ageData = calculateAge($birthdate);
 
-            // Return the age data as JSON
-            echo json_encode($ageData);
+            
+            
         } else {
-            // Invalid date format
+            
             $response = [
                 'error' => 'Invalid date format. Please use DD/MM/YYYY format.',
             ];
@@ -30,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             echo json_encode($response);
         }
     } else {
-        // Invalid or missing birthdate parameter
+   
         $response = [
             'error' => 'Invalid or missing birthdate parameter. Use DD/MM/YYYY format.',
         ];
@@ -40,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 }
 
 
-// Function to extract digits from a non-negative number
+
 function digitsIterative($nonneg)
 {
     $digits = [];
@@ -51,7 +58,7 @@ function digitsIterative($nonneg)
     return array_reverse($digits) ?: [0];
 }
 
-// Function to calculate 'a' value
+
 function calculateA($a)
 {
     while ($a >= 22) {
@@ -61,7 +68,7 @@ function calculateA($a)
     return $a;
 }
 
-// Function to calculate 'c' value
+
 function calculateC($c)
 {
     $yearDigits = digitsIterative($c);
@@ -75,20 +82,20 @@ function calculateC($c)
     return $sumC;
 }
 
-// Function to calculate age and related values
+
 function calculateAge($birthdate)
 {
     $currentDate = new DateTime('now');
     $birthdateDate = new DateTime($birthdate);
 
-    // Calculate age based on the difference between birthdate and current date
+    
     $age = $currentDate->diff($birthdateDate)->y;
 
-    $a = calculateA($birthdateDate->format('d'));
+    $a = intval(calculateA($birthdateDate->format('d')));
     $b = intval(calculateA($birthdateDate->format('m')));
     $c = calculateC($birthdateDate->format('Y'));
     $e = $a + $b + $c;
-
+    
     while ($e >= 22) {
         $digits = digitsIterative($e);
         $e = $digits[0] + $digits[1];
@@ -101,6 +108,13 @@ function calculateAge($birthdate)
     }
 
     $roundIfGreaterThan22 = function ($sum) {
+        while ($sum >= 22) {
+            $digits = digitsIterative($sum);
+            $sum = $digits[0] + $digits[1];
+        }
+        return $sum;
+    };
+    $roundIfGreaterThan9 = function ($sum) {
         while ($sum >= 22) {
             $digits = digitsIterative($sum);
             $sum = $digits[0] + $digits[1];
@@ -143,6 +157,30 @@ function calculateAge($birthdate)
     $women = $roundIfGreaterThan22($c_2 + $c_4);
     $sum_2 = $roundIfGreaterThan22($men + $women);
     $sum_3 = $roundIfGreaterThan22($sum + $sum_2);
+    
+    $planet = $roundIfGreaterThan22($sum+$sum_2+$sum_3);
+    $round9_1 = $roundIfGreaterThan9($sky+$earth+$sum);
+    $round9_2 = $roundIfGreaterThan9($men+$women+$sum_2+$sum_3);
+
+    $round9_a = $roundIfGreaterThan9($a+$a_2+$a_3);
+    $round9_c_1 = $roundIfGreaterThan9($c_1+$c_1_3+$c_1_2);
+    $round9_b = $roundIfGreaterThan9($b+$b_2+$b_3);
+    $round9_c_2 = $roundIfGreaterThan9($c_2+$c_2_3+$c_2_2);
+    $round9_year = $roundIfGreaterThan9($c+$year_2+$year_3);
+    $round9_c_3 = $roundIfGreaterThan9($c_3+$c_3_3+$c_3_2);
+    $round9_e = $roundIfGreaterThan9($e+$e_2+$e_3);
+    $round9_c_4 = $roundIfGreaterThan9($c_4+$c_4_3+$c_4_2); 
+
+    $sum_ab = $roundIfGreaterThan22($a+$b);
+    $sum_ab_2 = $roundIfGreaterThan22($a_2+$b_2);
+    $sum_ab_3 = $roundIfGreaterThan22($a_3+$b_3);
+    $sum_r_r = $roundIfGreaterThan22($r_1+$r_2);
+    $sum_center = $roundIfGreaterThan22($center+$center);
+    $sum_e_year = $roundIfGreaterThan22($e_3+$year_3);
+    $sum_e_c = $roundIfGreaterThan22($e+$c);
+    $sum_f = $roundIfGreaterThan22($a+$a_2+$a_3+$r_1+$center+$year_3+$c);
+    $sum_e = $roundIfGreaterThan22($b+$b_2+$b_3+$r_2+$center+$e_3+$e);
+    $sum_emj = $roundIfGreaterThan22($sum_ab+$sum_ab_2+$sum_ab_3+$sum_r_r+$sum_center+$sum_e_year+$sum_e_c);
 
     return [
         'birthdate'=>$birthdate,
@@ -188,6 +226,113 @@ function calculateAge($birthdate)
         'sum_2' => $sum_2,
         'sum_3' => $sum_3,
         'month' => $birthdateDate->format('n'),
+        'sum_ab' => $sum_ab,
+        'sum_ab_2' => $sum_ab_2,
+        'sum_ab_3' => $sum_ab_3,
+        'sum_r_r' => $sum_r_r,
+        'sum_center' => $sum_center,
+        'sum_e_year' => $sum_e_year,
+        'sum_e_c' => $sum_e_c,
+        'sum_f' => $sum_f,
+        'sum_e' => $sum_e,
+        'sum_emj' => $sum_emj,
+        'planet'=>$planet,
+        'round9_1' => $round9_1,
+        'round9_2' => $round9_2,
+        'round9_a'=> $round9_a,
+        'round9_c_1'=> $round9_c_1,
+        'round9_b' => $round9_b,
+        'round9_c_2' => $round9_c_2,
+        'round9_year' => $round9_year,
+        'round9_c_3' => $round9_c_3,
+        'round9_e' => $round9_e,
+        'round9_c_4' => $round9_c_4,
     ];
+}   
+try {
+    
+    $pdo = new PDO("pgsql:host=$dbhost;dbname=$dbname;user=$dbuser;password=$dbpass");
+
+    
+    $calculatedVariables = calculateAge($birthdate);
+
+    $variables = [
+        'A' => [$calculatedVariables['a'], $calculatedVariables['a_2'], $calculatedVariables['a_3']],
+        'B' => [$calculatedVariables['b'], $calculatedVariables['b_2'], $calculatedVariables['b_3']],
+        'YEAR' => [$calculatedVariables['c'], $calculatedVariables['year_2'], $calculatedVariables['year_3']],
+        'C_1' => [$calculatedVariables['c_1'], $calculatedVariables['c_1_2'], $calculatedVariables['c_1_3']],
+        'C_2' => [$calculatedVariables['c_2'], $calculatedVariables['c_2_2'], $calculatedVariables['c_2_3']],
+        'C_3' => [$calculatedVariables['c_3'], $calculatedVariables['c_3_2'], $calculatedVariables['c_3_3']],
+        'C_4' => [$calculatedVariables['c_4'], $calculatedVariables['c_4_2'], $calculatedVariables['c_4_3']],
+        'R_1' => [$calculatedVariables['r_3'], $calculatedVariables['e_3'], $calculatedVariables['love']],
+        'R_2' => [$calculatedVariables['r_3'], $calculatedVariables['year_3'], $calculatedVariables['money']],
+        'TAIL' => [$calculatedVariables['e'], $calculatedVariables['e_2'], $calculatedVariables['e_3']],
+    ];
+
+    $queryValues = "SELECT val_1, val_2, val_3, title FROM programs";
+    $stmtValues = $pdo->prepare($queryValues);
+    $stmtValues->execute();
+
+    $foundVariables = []; 
+
+    
+
+    while ($row = $stmtValues->fetch(PDO::FETCH_ASSOC)) {
+        $val_1 = $row['val_1'];
+        $val_2 = $row['val_2'];
+        $val_3 = $row['val_3'];
+        $combinationName = $row['title'];
+
+        $response_1 = []; 
+
+while ($row = $stmtValues->fetch(PDO::FETCH_ASSOC)) {
+    $val_1 = $row['val_1'];
+    $val_2 = $row['val_2'];
+    $val_3 = $row['val_3'];
+    $combinationName = $row['title'];
+
+    foreach ($variables as $varName => $varValues) {
+        $permutations = [
+            [$varValues[0], $varValues[1], $varValues[2]],
+            [$varValues[0], $varValues[2], $varValues[1]],
+            [$varValues[1], $varValues[0], $varValues[2]],
+            [$varValues[1], $varValues[2], $varValues[0]],
+            [$varValues[2], $varValues[0], $varValues[1]],
+            [$varValues[2], $varValues[1], $varValues[0]],
+        ];
+
+        foreach ($permutations as $permutation) {
+            if ($permutation == [$val_1, $val_2, $val_3]) {
+                $foundVariables[] = $varName;
+                $response_1[$varName] = $combinationName; 
+                break;
+            }
+        }
+    }
 }
-?>
+
+$notFoundVariables = array_diff(array_keys($variables), $foundVariables);
+foreach ($notFoundVariables as $varName) {
+    $response_1[$varName] = "Combination not found"; 
+}
+
+
+
+$combinedData = array_merge($ageData, $response_1);
+header('Content-Type: application/json'); // Use application/json content type
+echo json_encode($combinedData, JSON_UNESCAPED_UNICODE);
+    }
+}catch (PDOException $e) {
+    
+    echo 'Database Connection Error: ' . $e->getMessage();
+}
+
+
+
+
+
+
+
+
+
+
