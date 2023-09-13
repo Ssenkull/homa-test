@@ -4,10 +4,10 @@ header('Access-Control-Allow-Headers: *');
 header('Content-Type: application/json');
 
 
-$dbhost = 'localhost';   
-$dbname = 'programs';      
-$dbuser = 'postgres';  
-$dbpass = '14490234A';
+$dbhost = 'snuffleupagus.db.elephantsql.com';   
+$dbname = 'tzxggase';      
+$dbuser = 'tzxggase';  
+$dbpass = 'a_av9o_b0fCmXS9k90PsYWAuRmYGMqNm';
 
 
 
