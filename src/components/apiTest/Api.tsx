@@ -31,7 +31,7 @@ function ApiComponent() {
       return;
     }
 
-    const apiUrl = `http://localhost:8000/homa-test/api/api.php?birthdate=${date}`;
+    const apiUrl = `http://localhost:8000/api.php?birthdate=${date}`;
 
     fetch(apiUrl)
       .then((response) => {

@@ -10,8 +10,17 @@ import Uniq from './components/uniq';
 import Footer from './components/Footer/Footer';
 import MobileBlock from './components/Mobile/Mobile';
 import FreeBlock from './components/FreeCalcBlock/FreeBlock';
-import MainCard from './components/cards/MainCard';
+import MainNew from './components/cards/MainCardNew';
 import ApiComponent from './components/apiTest/Api';
+import Dropdowns from './components/questions/questions';
+import BlogSection from './components/celebrities/celebrities';
+import SliderComponent from './components/mainSlider/slider';
+import CompatibilityCard from './components/cards/CompabilityCard';
+import HealthDescr from './components/health-descr/health-descr';
+import MatrixDescr from './components/matrixDescr/matrix-descr';
+import BrandCard from './components/cards/BrandCard';
+import BabyCard from './components/cards/BabyCard';
+import Matrix from './components/Matrix/matrix';
 
 // import logo from './img/logo.svg';
 
@@ -21,12 +30,21 @@ const App: React.FC = () => {
       <Header links={['Матриці', 'Матеріали', 'Тарифи', 'Відгуки', 'Блог']}/>
       <ApiComponent/>
       <MainForm />
+      <Matrix/>
+      <MatrixDescr/>
+      <HealthDescr/>
       <Stat/>
       <AboutMatrix/>
       <FreeBlock/>
       <Uniq/>
-      <MainCard/>
+      <MainNew/>
+      <CompatibilityCard/>
+      <BabyCard/>
+      <BrandCard/>
+      <SliderComponent/>
+      <Dropdowns/>
       <MobileBlock/>
+      <BlogSection/>
       <Footer/>
     </div>
   );

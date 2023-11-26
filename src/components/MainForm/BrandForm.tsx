@@ -6,11 +6,11 @@ import './styles/brand.css';
 
 
 const BrandForm = () => {
-    const [selectedSex, setSelectedSex] = useState('');
+    const [selectedSex, setSelectedSex] = useState('М');
     const [name, setName] = useState('');
     const [sex, setSex] = useState('');
     const [birthdate, setBirthdate] = useState('');
-    const [matrixType, setMatrixType] = useState('');
+    const [matrixType, setMatrixType] = useState('Стандарт');
 
     const handleNameChange = (event: ChangeEvent<HTMLInputElement>) => {
         setName(event.target.value);

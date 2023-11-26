@@ -108,7 +108,7 @@ function calculateAge($birthdate)
     }
 
     $roundIfGreaterThan22 = function ($sum) {
-        while ($sum >= 22) {
+        while ($sum >    22) {
             $digits = digitsIterative($sum);
             $sum = $digits[0] + $digits[1];
         }
@@ -182,6 +182,157 @@ function calculateAge($birthdate)
     $sum_e = $roundIfGreaterThan22($b+$b_2+$b_3+$r_2+$center+$e_3+$e);
     $sum_emj = $roundIfGreaterThan22($sum_ab+$sum_ab_2+$sum_ab_3+$sum_r_r+$sum_center+$sum_e_year+$sum_e_c);
 
+    $ark_1 = $roundIfGreaterThan22($c_1 + $a);
+    $ark_2 = $roundIfGreaterThan22($ark_1 + $a);
+    $ark_3 = $roundIfGreaterThan22($ark_2 + $a);
+    $ark_4 = $roundIfGreaterThan22($ark_1 + $ark_2);
+    $ark_5 = $roundIfGreaterThan22($ark_1 + $c_1);
+    $ark_6 = $roundIfGreaterThan22($ark_1 + $ark_5);
+    $ark_7 = $roundIfGreaterThan22($ark_5 + $c_1);
+
+    $ark_1_1 = $roundIfGreaterThan22($c_1+$b);
+    $ark_1_2 = $roundIfGreaterThan22($c_1+$ark_1_1);
+    $ark_1_3 = $roundIfGreaterThan22($c_1+$ark_1_2);
+    $ark_1_4 = $roundIfGreaterThan22($ark_1_1+$ark_1_2);
+    $ark_1_5 = $roundIfGreaterThan22($ark_1_1+$b);
+    $ark_1_6 = $roundIfGreaterThan22($ark_1_1+$ark_1_5);
+    $ark_1_7 = $roundIfGreaterThan22($ark_1_5+$b);
+
+    $ark_2_1 = $roundIfGreaterThan22($c_2+$b);
+    $ark_2_2 = $roundIfGreaterThan22($b+$ark_2_1);
+    $ark_2_3 = $roundIfGreaterThan22($b+$ark_2_2);
+    $ark_2_4 = $roundIfGreaterThan22($ark_2_1+$ark_2_2);
+    $ark_2_5 = $roundIfGreaterThan22($ark_2_1+$c_2);
+    $ark_2_6 = $roundIfGreaterThan22($ark_2_1+$ark_2_5);
+    $ark_2_7 = $roundIfGreaterThan22($ark_2_5+$c_2);
+
+    $ark_3_1 = $roundIfGreaterThan22($c_2+$c);
+    $ark_3_2 = $roundIfGreaterThan22($c_2+$ark_3_1);
+    $ark_3_3 = $roundIfGreaterThan22($c_2+$ark_3_2);
+    $ark_3_4 = $roundIfGreaterThan22($ark_3_1+$ark_3_2);
+    $ark_3_5 = $roundIfGreaterThan22($ark_3_1+$c);
+    $ark_3_6 = $roundIfGreaterThan22($ark_3_1+$ark_3_5);
+    $ark_3_7 = $roundIfGreaterThan22($ark_3_5+$c);
+
+    $ark_4_1 = $roundIfGreaterThan22($c_3+$c);
+    $ark_4_2 = $roundIfGreaterThan22($c+$ark_4_1);
+    $ark_4_3 = $roundIfGreaterThan22($c+$ark_4_2);
+    $ark_4_4 = $roundIfGreaterThan22($ark_4_1+$ark_4_2);
+    $ark_4_5 = $roundIfGreaterThan22($ark_4_1+$c_3);
+    $ark_4_6 = $roundIfGreaterThan22($ark_4_1+$ark_4_5);
+    $ark_4_7 = $roundIfGreaterThan22($ark_4_5+$c_3);
+
+    $ark_5_1 = $roundIfGreaterThan22($c_3+$e);
+    $ark_5_2 = $roundIfGreaterThan22($c_3+$ark_5_1);
+    $ark_5_3 = $roundIfGreaterThan22($c_3+$ark_5_2);
+    $ark_5_4 = $roundIfGreaterThan22($ark_5_1+$ark_5_2);
+    $ark_5_5 = $roundIfGreaterThan22($ark_5_1+$e);
+    $ark_5_6 = $roundIfGreaterThan22($ark_5_1+$ark_5_5);
+    $ark_5_7 = $roundIfGreaterThan22($ark_5_5+$e);
+    
+    $ark_6_1 = $roundIfGreaterThan22($c_4+$e);
+    $ark_6_2 = $roundIfGreaterThan22($e+$ark_6_1);
+    $ark_6_3 = $roundIfGreaterThan22($e+$ark_6_2);
+    $ark_6_4 = $roundIfGreaterThan22($ark_6_1+$ark_6_2);
+    $ark_6_5 = $roundIfGreaterThan22($ark_6_1+$c_4);
+    $ark_6_6 = $roundIfGreaterThan22($ark_6_1+$ark_6_5);
+    $ark_6_7 = $roundIfGreaterThan22($ark_6_5+$c_4);
+
+    $ark_7_1 = $roundIfGreaterThan22($c_4+$a);
+    $ark_7_2 = $roundIfGreaterThan22($c_4+$ark_7_1);
+    $ark_7_3 = $roundIfGreaterThan22($c_4+$ark_7_2);
+    $ark_7_4 = $roundIfGreaterThan22($ark_7_1+$ark_7_2);
+    $ark_7_5 = $roundIfGreaterThan22($ark_7_1+$a);
+    $ark_7_6 = $roundIfGreaterThan22($ark_7_1+$ark_7_5);
+    $ark_7_7 = $roundIfGreaterThan22($ark_7_5+$a);
+
+    global $comb_1, $comb_2, $comb_3, $comb_4, $comb_5, $comb_6, $comb_7,
+    $comb_1_1,$comb_1_2,$comb_1_3,$comb_1_4,$comb_1_5,$comb_1_6,$comb_1_7,
+    $comb_2_1,$comb_2_2,$comb_2_3,$comb_2_4,$comb_2_5,$comb_2_6,$comb_2_7,
+    $comb_3_1,$comb_3_2,$comb_3_3,$comb_3_4,$comb_3_5,$comb_3_6,$comb_3_7,
+    $comb_4_1,$comb_4_2,$comb_4_3,$comb_4_4,$comb_4_5,$comb_4_6,$comb_4_7,
+    $comb_5_1,$comb_5_2,$comb_5_3,$comb_5_4,$comb_5_5,$comb_5_6,$comb_5_7,
+    $comb_6_1,$comb_6_2,$comb_6_3,$comb_6_4,$comb_6_5,$comb_6_6,$comb_6_7,
+    $comb_7_1,$comb_7_2,$comb_7_3,$comb_7_4,$comb_7_5,$comb_7_6,$comb_7_7,
+    $comb_8_1, $comb_8_2, $comb_8_3, $comb_8_4, $comb_8_5, $comb_8_6, $comb_8_7, $comb_8_8;
+
+    $comb_1 = "$ark_3-$ark_4_3-" . $roundIfGreaterThan22($ark_3 + $ark_4_3);
+    $comb_2 = "$ark_2-$ark_4_2-".$roundIfGreaterThan22($ark_2 + $ark_4_2);
+    $comb_3 =  "$ark_4-$ark_4_4-" . $roundIfGreaterThan22($ark_4 + $ark_4_4);
+    $comb_4 = "$ark_1-$ark_4_1-" . $roundIfGreaterThan22($ark_1 + $ark_4_1);
+    $comb_5 = "$ark_6-$ark_4_6-".$roundIfGreaterThan22($ark_6 + $ark_4_6);
+    $comb_6 = "$ark_5-$ark_4_5-" . $roundIfGreaterThan22($ark_5 + $ark_4_5);
+    $comb_7 = "$ark_7-$ark_4_7-" . $roundIfGreaterThan22($ark_7 + $ark_4_7);
+
+    $comb_1_1 = "$ark_1_1-$ark_5_1-" . $roundIfGreaterThan22($ark_1_1 + $ark_5_1);
+    $comb_1_2 = "$ark_1_2-$ark_5_2-" . $roundIfGreaterThan22($ark_1_2+$ark_5_2);
+    $comb_1_3 = "$ark_1_3-$ark_5_3-". $roundIfGreaterThan22($ark_1_3+$ark_5_3);
+    $comb_1_4 = "$ark_1_4-$ark_5_4-" .$roundIfGreaterThan22($ark_1_4+$ark_5_4);
+    $comb_1_5 = "$ark_1_6-$ark_5_6-" .$roundIfGreaterThan22($ark_1_6+$ark_5_6);
+    $comb_1_6 = "$ark_1_5-$ark_5_5-". $roundIfGreaterThan22($ark_1_5+$ark_5_5);
+    $comb_1_7 = "$ark_1_7-$ark_5_7-". $roundIfGreaterThan22($ark_1_7+$ark_5_7);
+
+    $comb_2_1 = "$ark_2_1-$ark_6_1-" .$roundIfGreaterThan22($ark_2_1+$ark_6_1);
+    $comb_2_2 = "$ark_2_2-$ark_6_2-" .$roundIfGreaterThan22($ark_2_2+$ark_6_2);
+    $comb_2_3 = "$ark_2_3-$ark_6_3-" .$roundIfGreaterThan22($ark_2_3+$ark_6_3);
+    $comb_2_4 = "$ark_2_4-$ark_6_4-". $roundIfGreaterThan22($ark_2_4+$ark_6_4);
+    $comb_2_5 = "$ark_2_6-$ark_6_6-".$roundIfGreaterThan22($ark_2_6+$ark_6_6);
+    $comb_2_6 = "$ark_2_5-$ark_6_5-".$roundIfGreaterThan22($ark_2_5+$ark_6_5);
+    $comb_2_7 = "$ark_2_7-$ark_6_7-". $roundIfGreaterThan22($ark_2_7+$ark_6_7);
+
+    $comb_3_1 = "$ark_3_1-$ark_7_1-" .$roundIfGreaterThan22($ark_3_1+$ark_7_1);
+    $comb_3_2 = "$ark_3_2-$ark_7_2-" .$roundIfGreaterThan22($ark_3_2+$ark_7_2);
+    $comb_3_3 = "$ark_3_3-$ark_7_3-" .$roundIfGreaterThan22($ark_3_3+$ark_7_3);
+    $comb_3_4 = "$ark_3_4-$ark_7_4-". $roundIfGreaterThan22($ark_3_4+$ark_7_4);
+    $comb_3_5 = "$ark_3_6-$ark_7_6-".$roundIfGreaterThan22($ark_3_6+$ark_7_6);
+    $comb_3_6 = "$ark_3_5-$ark_7_5-".$roundIfGreaterThan22($ark_3_5+$ark_7_5);
+    $comb_3_7 = "$ark_3_7-$ark_7_7-". $roundIfGreaterThan22($ark_3_7+$ark_7_7);
+
+    $comb_4_1 = "$ark_4_1-$ark_1-" .$roundIfGreaterThan22($ark_4_1+$ark_1);
+    $comb_4_2 = "$ark_4_2-$ark_2-" .$roundIfGreaterThan22($ark_4_2+$ark_2);
+    $comb_4_3 = "$ark_4_3-$ark_3-" .$roundIfGreaterThan22($ark_4_3+$ark_3);
+    $comb_4_4 = "$ark_4_4-$ark_4-". $roundIfGreaterThan22($ark_4_4+$ark_4);
+    $comb_4_5 = "$ark_4_6-$ark_6-".$roundIfGreaterThan22($ark_4_6+$ark_6);
+    $comb_4_6 = "$ark_4_5-$ark_5-".$roundIfGreaterThan22($ark_4_5+$ark_5);
+    $comb_4_7 = "$ark_4_7-$ark_7-". $roundIfGreaterThan22($ark_4_7+$ark_7);
+
+    $comb_5_1 = "$ark_5_1-$ark_1_1-" .$roundIfGreaterThan22($ark_5_1+$ark_1_1);
+    $comb_5_2 = "$ark_5_2-$ark_1_2-" .$roundIfGreaterThan22($ark_5_2+$ark_1_2);
+    $comb_5_3 = "$ark_5_3-$ark_1_3-" .$roundIfGreaterThan22($ark_5_3+$ark_1_3);
+    $comb_5_4 = "$ark_5_4-$ark_1_4-". $roundIfGreaterThan22($ark_5_4+$ark_1_4);
+    $comb_5_5 = "$ark_5_6-$ark_1_6-".$roundIfGreaterThan22($ark_5_6+$ark_1_6);
+    $comb_5_6 = "$ark_5_5-$ark_1_5-".$roundIfGreaterThan22($ark_5_5+$ark_1_5);
+    $comb_5_7 = "$ark_5_7-$ark_1_7-". $roundIfGreaterThan22($ark_5_7+$ark_1_7);
+
+    $comb_6_1 = "$ark_6_1-$ark_2_1-" .$roundIfGreaterThan22($ark_6_1+$ark_2_1);
+    $comb_6_2 = "$ark_6_2-$ark_2_2-" .$roundIfGreaterThan22($ark_6_2+$ark_2_2);
+    $comb_6_3 = "$ark_6_3-$ark_2_3-" .$roundIfGreaterThan22($ark_6_3+$ark_2_3);
+    $comb_6_4 = "$ark_6_4-$ark_2_4-". $roundIfGreaterThan22($ark_6_4+$ark_2_4);
+    $comb_6_5 = "$ark_6_6-$ark_2_6-".$roundIfGreaterThan22($ark_6_6+$ark_2_6);
+    $comb_6_6 = "$ark_6_5-$ark_2_5-".$roundIfGreaterThan22($ark_6_5+$ark_2_5);
+    $comb_6_7 = "$ark_6_7-$ark_2_7-". $roundIfGreaterThan22($ark_6_7+$ark_2_7);
+
+    $comb_7_1 = "$ark_7_1-$ark_3_1-" .$roundIfGreaterThan22($ark_7_1+$ark_3_1);
+    $comb_7_2 = "$ark_7_2-$ark_3_2-" .$roundIfGreaterThan22($ark_7_2+$ark_3_2);
+    $comb_7_3 = "$ark_7_3-$ark_3_3-" .$roundIfGreaterThan22($ark_7_3+$ark_3_3);
+    $comb_7_4 = "$ark_7_4-$ark_3_4-". $roundIfGreaterThan22($ark_7_4+$ark_3_4);
+    $comb_7_5 = "$ark_7_6-$ark_3_6-".$roundIfGreaterThan22($ark_7_6+$ark_3_6);
+    $comb_7_6 = "$ark_7_5-$ark_3_5-".$roundIfGreaterThan22($ark_7_5+$ark_3_5);
+    $comb_7_7 = "$ark_7_7-$ark_3_7-". $roundIfGreaterThan22($ark_7_7+$ark_3_7);
+
+
+    $comb_8_1 = "$a-$c-" . $roundIfGreaterThan22($a+$c);
+    $comb_8_2 = "$c_1-$c_3-" . $roundIfGreaterThan22($c_1+$c_3);
+    $comb_8_3 = "$b-$e-" . $roundIfGreaterThan22($b+$e);
+    $comb_8_4 = "$c_2-$c_4-" . $roundIfGreaterThan22($c_2+$c_4);
+    $comb_8_5 = "$c-$a-" . $roundIfGreaterThan22($a+$c);
+    $comb_8_6 = "$c_3-$c_1-" . $roundIfGreaterThan22($c_1+$c_3);
+    $comb_8_7 = "$e-$b-" . $roundIfGreaterThan22($b+$e);
+    $comb_8_8 = "$c_4-$c_2-" . $roundIfGreaterThan22($c_2+$c_4);
+
+
+
+
     return [
         'birthdate'=>$birthdate,
         'age' => $age,
@@ -247,15 +398,135 @@ function calculateAge($birthdate)
         'round9_c_3' => $round9_c_3,
         'round9_e' => $round9_e,
         'round9_c_4' => $round9_c_4,
+        'ark_1' => $ark_1,
+        'ark_2' => $ark_2,
+        'ark_3' => $ark_3,
+        'ark_4' => $ark_4,
+        'ark_5' => $ark_5,
+        'ark_6' => $ark_6,
+        'ark_7' => $ark_7,
+        'ark_1_1'=> $ark_1_1,
+        'ark_1_2'=> $ark_1_2,
+        'ark_1_3'=> $ark_1_3,
+        'ark_1_4'=> $ark_1_4,
+        'ark_1_5'=> $ark_1_5,
+        'ark_1_6'=> $ark_1_6,
+        'ark_1_7'=> $ark_1_7,
+        'ark_2_1'=>$ark_2_1,
+        'ark_2_2'=>$ark_2_2,
+        'ark_2_3'=>$ark_2_3,
+        'ark_2_4'=>$ark_2_4,
+        'ark_2_5'=>$ark_2_5,
+        'ark_2_6'=>$ark_2_6,
+        'ark_2_7'=>$ark_2_7,
+        'ark_3_1'=>$ark_3_1,
+        'ark_3_2'=>$ark_3_2,
+        'ark_3_3'=>$ark_3_3,
+        'ark_3_4'=>$ark_3_4,
+        'ark_3_5'=>$ark_3_5,
+        'ark_3_6'=>$ark_3_6,
+        'ark_3_7'=>$ark_3_7,
+        'ark_4_1'=>$ark_4_1,
+        'ark_4_2'=>$ark_4_2,
+        'ark_4_3'=>$ark_4_3,
+        'ark_4_4'=>$ark_4_4,
+        'ark_4_5'=>$ark_4_5,
+        'ark_4_6'=>$ark_4_6,
+        'ark_4_7'=>$ark_4_7,
+        'ark_5_1'=>$ark_5_1,
+        'ark_5_2'=>$ark_5_2,
+        'ark_5_3'=>$ark_5_3,
+        'ark_5_4'=>$ark_5_4,
+        'ark_5_5'=>$ark_5_5,
+        'ark_5_6'=>$ark_5_6,
+        'ark_5_7'=>$ark_5_7,
+        'ark_6_1'=>$ark_6_1,
+        'ark_6_2'=>$ark_6_2,
+        'ark_6_3'=>$ark_6_3,
+        'ark_6_4'=>$ark_6_4,
+        'ark_6_5'=>$ark_6_5,
+        'ark_6_6'=>$ark_6_6,
+        'ark_6_7'=>$ark_6_7,
+        'ark_7_1'=>$ark_7_1,
+        'ark_7_2'=>$ark_7_2,
+        'ark_7_3'=>$ark_7_3,
+        'ark_7_4'=>$ark_7_4,
+        'ark_7_5'=>$ark_7_5,
+        'ark_7_6'=>$ark_7_6,
+        'ark_7_7'=>$ark_7_7,
+        'comb_1'=>$comb_1,
+        'comb_2'=>$comb_2,
+        'comb_3'=>$comb_3,
+        'comb_4'=>$comb_4,
+        'comb_5'=>$comb_5,
+        'comb_6' => $comb_6,
+        'comb_7' => $comb_7,
+        'comb_1_1' => $comb_1_1,
+        'comb_1_2' => $comb_1_2,
+        'comb_1_3'=>$comb_1_3,
+        'comb_1_4'=>$comb_1_4,
+        'comb_1_5'=>$comb_1_5,
+        'comb_1_6'=>$comb_1_6,
+        'comb_1_7'=>$comb_1_7,
+        'comb_2_1'=>$comb_2_1,
+        'comb_2_2'=>$comb_2_2,
+        'comb_2_3'=>$comb_2_3,
+        'comb_2_4'=>$comb_2_4,
+        'comb_2_5'=>$comb_2_5,
+        'comb_2_6'=>$comb_2_6,
+        'comb_2_7'=>$comb_2_7,
+        'comb_3_1'=>$comb_3_1,
+        'comb_3_2'=>$comb_3_2,
+        'comb_3_3'=>$comb_3_3,
+        'comb_3_4'=>$comb_3_4,
+        'comb_3_5'=>$comb_3_5,
+        'comb_3_6'=>$comb_3_6,
+        'comb_3_7'=>$comb_3_7,
+        'comb_4_1'=>$comb_4_1,
+        'comb_4_2' => $comb_4_2,
+        'comb_4_3'=>$comb_4_3,
+        'comb_4_4'=>$comb_4_4,
+        'comb_4_5'=>$comb_4_5,
+        'comb_4_6'=>$comb_4_6,
+        'comb_4_7'=>$comb_4_7,
+        'comb_5_1'=>$comb_5_1,
+        'comb_5_2'=> $comb_5_2,
+        'comb_5_3' => $comb_5_3,
+        'comb_5_4' => $comb_5_4,
+        'comb_5_5' => $comb_5_5,
+        'comb_5_6' => $comb_5_6,
+        'comb_5_7' => $comb_5_7,
+        'comb_6_1'=>$comb_6_1,
+        'comb_6_2'=> $comb_6_2,
+        'comb_6_3'=>$comb_6_3,
+        'comb_6_4'=>$comb_6_4,
+        'comb_6_5'=>$comb_6_5,
+        'comb_6_6'=>$comb_6_6,
+        'comb_6_7'=>$comb_6_7,
+        'comb_7_1'=>$comb_7_1,
+        'comb_7_2'=> $comb_7_2,
+        'comb_7_3'=>$comb_7_3,
+        'comb_7_4'=>$comb_7_4,
+        'comb_7_5'=>$comb_7_5,
+        'comb_7_6'=>$comb_7_6,
+        'comb_7_7'=>$comb_7_7,
+        'comb_8_1'=>$comb_8_1,
+        'comb_8_2'=>$comb_8_2,
+        'comb_8_3'=>$comb_8_3,
+        'comb_8_4'=>$comb_8_4,
+        'comb_8_5'=>$comb_8_5,
+        'comb_8_6'=>$comb_8_6,
+        'comb_8_7'=>$comb_8_7,
+        'comb_8_8'=>$comb_8_8,
     ];
-}   
+} 
 try {
-    
     $pdo = new PDO("pgsql:host=$dbhost;dbname=$dbname;user=$dbuser;password=$dbpass");
 
-    
+    // Calculate age-related variables
     $calculatedVariables = calculateAge($birthdate);
 
+    // Define variables
     $variables = [
         'A' => [$calculatedVariables['a'], $calculatedVariables['a_2'], $calculatedVariables['a_3']],
         'B' => [$calculatedVariables['b'], $calculatedVariables['b_2'], $calculatedVariables['b_3']],
@@ -269,70 +540,207 @@ try {
         'TAIL' => [$calculatedVariables['e'], $calculatedVariables['e_2'], $calculatedVariables['e_3']],
     ];
 
+    // Retrieve program data
     $queryValues = "SELECT val_1, val_2, val_3, title FROM programs";
     $stmtValues = $pdo->prepare($queryValues);
     $stmtValues->execute();
 
-    $foundVariables = []; 
+    // Initialize variables to store responses
+    $response_1 = [];
+    $response_2 = [];
 
-    
-
+    // Search for variable combinations
     while ($row = $stmtValues->fetch(PDO::FETCH_ASSOC)) {
-        $val_1 = $row['val_1'];
-        $val_2 = $row['val_2'];
-        $val_3 = $row['val_3'];
+        $dbVar_1 = $row['val_1'];
+        $dbVar_2 = $row['val_2'];
+        $dbVar_3 = $row['val_3'];
         $combinationName = $row['title'];
 
-        $response_1 = []; 
+        // Check if variable combinations match in $variables
+        foreach ($variables as $varName => $varValues) {
+            $permutations = generatePermutations($varValues);
 
-while ($row = $stmtValues->fetch(PDO::FETCH_ASSOC)) {
-    $val_1 = $row['val_1'];
-    $val_2 = $row['val_2'];
-    $val_3 = $row['val_3'];
-    $combinationName = $row['title'];
+            if (permutationMatchesDatabase($permutations, [$dbVar_1, $dbVar_2, $dbVar_3])) {
+                $response_1[$varName] = $combinationName;
+            }
+        }
 
-    foreach ($variables as $varName => $varValues) {
-        $permutations = [
-            [$varValues[0], $varValues[1], $varValues[2]],
-            [$varValues[0], $varValues[2], $varValues[1]],
-            [$varValues[1], $varValues[0], $varValues[2]],
-            [$varValues[1], $varValues[2], $varValues[0]],
-            [$varValues[2], $varValues[0], $varValues[1]],
-            [$varValues[2], $varValues[1], $varValues[0]],
+        // Search for variable combinations in $combinations
+        $combinations = [
+            $comb_1, $comb_2, $comb_3, $comb_4, $comb_5, $comb_6, $comb_7,
+            $comb_2_1, $comb_2_2, $comb_2_3, $comb_2_4, $comb_2_5, $comb_2_6, $comb_2_7,
+            $comb_3_1, $comb_3_2, $comb_3_3, $comb_3_4, $comb_3_5, $comb_3_6, $comb_3_7,
+            $comb_4_1, $comb_4_2, $comb_4_3, $comb_4_4, $comb_4_5, $comb_4_6, $comb_4_7,
+            $comb_5_1, $comb_5_2, $comb_5_3, $comb_5_4, $comb_5_5, $comb_5_6, $comb_5_7,
+            $comb_6_1, $comb_6_2, $comb_6_3, $comb_6_4, $comb_6_5, $comb_6_6, $comb_6_7,
+            $comb_7_1, $comb_7_2, $comb_7_3, $comb_7_4, $comb_7_5, $comb_7_6, $comb_7_7,
+            $comb_8_1, $comb_8_2, $comb_8_3, $comb_8_4, $comb_8_5, $comb_8_6, $comb_8_7, $comb_8_8,
         ];
 
-        foreach ($permutations as $permutation) {
-            if ($permutation == [$val_1, $val_2, $val_3]) {
-                $foundVariables[] = $varName;
-                $response_1[$varName] = $combinationName; 
-                break;
+        foreach ($combinations as $combination) {
+            $parts = explode('-', $combination);
+            $p_1 = $parts[0];
+            $p_2 = $parts[1];
+            $p_3 = $parts[2];
+
+            $permutations = generatePermutations_circle($p_1, $p_2, $p_3);
+
+            if (permutationMatchesDatabase($permutations, [$dbVar_1, $dbVar_2, $dbVar_3])) {
+                $response_2[$combination] = $combinationName;
+                break; // No need to check other permutations once a match is found.
             }
         }
     }
-}
 
-$notFoundVariables = array_diff(array_keys($variables), $foundVariables);
-foreach ($notFoundVariables as $varName) {
-    $response_1[$varName] = "Combination not found"; 
-}
-
-
-
-$combinedData = array_merge($ageData, $response_1);
-header('Content-Type: application/json'); // Use application/json content type
-echo json_encode($combinedData, JSON_UNESCAPED_UNICODE);
+    // Handle variables not found in the database
+    $notFoundVariables = array_diff(array_keys($variables), array_keys($response_1));
+    foreach ($notFoundVariables as $varName) {
+        $response_1[$varName] = "Combination not found";
     }
-}catch (PDOException $e) {
     
+} catch (PDOException $e) {
     echo 'Database Connection Error: ' . $e->getMessage();
 }
 
+//$combinedData = array_merge($ageData, $response_1, $response_2);
+header('Content-Type: application/json');
+echo json_encode($ageData, JSON_UNESCAPED_UNICODE);
+// echo json_encode($response_1, JSON_UNESCAPED_UNICODE);
+// echo json_encode($response_2, JSON_UNESCAPED_UNICODE);
+// try {
+
+//  $pdo = new PDO("pgsql:host=$dbhost;dbname=$dbname;user=$dbuser;password=$dbpass");
 
 
+//     $calculatedVariables = calculateAge($birthdate);
 
 
+//     $variables = [
+//         'A' => [$calculatedVariables['a'], $calculatedVariables['a_2'], $calculatedVariables['a_3']],
+//         'B' => [$calculatedVariables['b'], $calculatedVariables['b_2'], $calculatedVariables['b_3']],
+//         'YEAR' => [$calculatedVariables['c'], $calculatedVariables['year_2'], $calculatedVariables['year_3']],
+//         'C_1' => [$calculatedVariables['c_1'], $calculatedVariables['c_1_2'], $calculatedVariables['c_1_3']],
+//         'C_2' => [$calculatedVariables['c_2'], $calculatedVariables['c_2_2'], $calculatedVariables['c_2_3']],
+//         'C_3' => [$calculatedVariables['c_3'], $calculatedVariables['c_3_2'], $calculatedVariables['c_3_3']],
+//         'C_4' => [$calculatedVariables['c_4'], $calculatedVariables['c_4_2'], $calculatedVariables['c_4_3']],
+//         'R_1' => [$calculatedVariables['r_3'], $calculatedVariables['e_3'], $calculatedVariables['love']],
+//         'R_2' => [$calculatedVariables['r_3'], $calculatedVariables['year_3'], $calculatedVariables['money']],
+//         'TAIL' => [$calculatedVariables['e'], $calculatedVariables['e_2'], $calculatedVariables['e_3']],
+//     ];
+
+    
+//     $queryValues = "SELECT val_1, val_2, val_3, title FROM programs";
+//     $stmtValues = $pdo->prepare($queryValues);
+//     $stmtValues->execute();
+
+//     $foundVariables = [];
+//     while ($row = $stmtValues->fetch(PDO::FETCH_ASSOC)) {
+//         $val_1 = $row['val_1'];
+//         $val_2 = $row['val_2'];
+//         $val_3 = $row['val_3'];
+//         $combinationName = $row['title'];
+
+//         foreach ($variables as $varName => $varValues) {
+//             $permutations = generatePermutations($varValues);
+
+//             if (permutationMatchesDatabase($permutations, [$val_1, $val_2, $val_3])) {
+//                 $foundVariables[] = $varName;
+//                 $response_1[$varName] = $combinationName;
+//             }
+//         }
+//     }
+
+//     $notFoundVariables = array_diff(array_keys($variables), $foundVariables);
+//     foreach ($notFoundVariables as $varName) {
+//         $response_1[$varName] = "Combination not found";
+//     }
 
 
+    
+// } catch (PDOException $e) {
+//     echo 'Database Connection Error: ' . $e->getMessage();
+// }
 
 
+// try {
+//     $response_2 = [];
+//     $queryValues = "SELECT val_1, val_2, val_3, title FROM programs";
+//     $stmtValues = $pdo->prepare($queryValues);
+//     $stmtValues->execute();
+//     $combinations = [
+//         $comb_1, $comb_2, $comb_3, $comb_4, $comb_5, $comb_6, $comb_7,
+//         $comb_2_1, $comb_2_2, $comb_2_3, $comb_2_4, $comb_2_5, $comb_2_6, $comb_2_7,
+//         $comb_3_1, $comb_3_2, $comb_3_3, $comb_3_4, $comb_3_5, $comb_3_6, $comb_3_7,
+//         $comb_4_1, $comb_4_2, $comb_4_3, $comb_4_4, $comb_4_5, $comb_4_6, $comb_4_7,
+//         $comb_5_1, $comb_5_2, $comb_5_3, $comb_5_4, $comb_5_5, $comb_5_6, $comb_5_7,
+//         $comb_6_1, $comb_6_2, $comb_6_3, $comb_6_4, $comb_6_5, $comb_6_6, $comb_6_7,
+//         $comb_7_1, $comb_7_2, $comb_7_3, $comb_7_4, $comb_7_5, $comb_7_6, $comb_7_7,
+//         $comb_8_1, $comb_8_2, $comb_8_3, $comb_8_4, $comb_8_5, $comb_8_6, $comb_8_7, $comb_8_8,
+//     ];
 
+//     foreach ($combinations as $combination) {
+//         $parts = explode('-', $combination);
+//         $p_1 = $parts[0];
+//         $p_2 = $parts[1];
+//         $p_3 = $parts[2];
+        
+//         $permutations = generatePermutations_circle($p_1,$p_2,$p_3);
+//         $stmtValues->execute();
+        
+
+//         while ($row = $stmtValues->fetch(PDO::FETCH_ASSOC)) {
+//             $dbVar_1 = $row['val_1'];
+//             $dbVar_2 = $row['val_2'];
+//             $dbVar_3 = $row['val_3'];
+//             $combinationName = $row['title'];
+        
+//             if (permutationMatchesDatabase($permutations,[$dbVar_1, $dbVar_2, $dbVar_3])) {
+//                 $response_2[$combination] = $combinationName;
+//             }
+//         }
+
+//         if (empty($response_2[$combination])) {
+//             $response_2[$combination] = "Combination not found";
+//         }
+//     }
+// } catch (PDOException $e) {  
+//     echo 'Database Connection Error: ' . $e->getMessage();
+// }
+
+function generatePermutations($varValues) {
+    $permutations = [
+        [$varValues[0], $varValues[1], $varValues[2]],
+        [$varValues[0], $varValues[2], $varValues[1]],
+        [$varValues[1], $varValues[0], $varValues[2]],
+        [$varValues[1], $varValues[2], $varValues[0]],
+        [$varValues[2], $varValues[0], $varValues[1]],
+        [$varValues[2], $varValues[1], $varValues[0]],
+    ];
+    
+    return $permutations;
+}
+
+function permutationMatchesDatabase($permutations, $dbValues) {
+    foreach ($permutations as $permutation) {
+        if ($permutation == $dbValues) {
+            return true;
+        }
+    }
+    return false;
+}
+
+function generatePermutations_circle($var_1, $var_2, $var_3) {
+    $permutations = [
+        [$var_1, $var_2, $var_3],
+        [$var_1, $var_3, $var_2],
+        [$var_2, $var_1, $var_3],
+        [$var_2, $var_3, $var_1],
+        [$var_3, $var_1, $var_2],
+        [$var_3, $var_2, $var_1],
+    ];
+    return $permutations;
+}
+
+// $combinedData = array_merge($ageData, $response_1,$response_2);
+//     header('Content-Type: application/json');
+//    echo json_encode($combinedData, JSON_UNESCAPED_UNICODE);
